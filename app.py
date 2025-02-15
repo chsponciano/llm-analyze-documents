@@ -15,14 +15,13 @@ from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 
-
 @st.cache_resource
 def load_llm_model(temperature: float = 0.1):
     """
     Load the LLM model into memory in HuggingFace HUB
     """
     return HuggingFaceHub(
-        repo_id='meta-llama/Meta-Llama-3-8B-Instruct',
+        repo_id='mistralai/Mistral-7B-Instruct-v0.2',
         model_kwargs={
             'temperature': temperature,
             'return_full_text': False,
