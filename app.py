@@ -77,7 +77,7 @@ def generate_chain(
     
     # Contextualization prompt
     # (query, chat history) -> LLM -> reformulated query -> retriever
-    context_q_system_prompt = 'Given the following chat history and the follow-up question which might reference context in the chat history, formulate a standalone question which can be understood without the chat history. Do NOT answer the question, just reformulate it if needed and otherwise return it as is.'
+    context_q_system_prompt = 'Given the following chat history and the follow-up question which might reference context in the chat history, formulate a standalone question which can be understood without the chat history. Do NOT answer the question, just reformulate it if needed and otherwise return it as is. ALWAYS ANSWER IN BRAZILIAN PORTUGUESE.'
     context_q_system_prompt = token_s + context_q_system_prompt
     context_q_user_prompt = 'Question: {input}' + token_e
     context_q_prompt = ChatPromptTemplate.from_messages(
